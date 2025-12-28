@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=3 uid="uid://kdmb4vuhof70"]
 
-[ext_resource type="Texture2D" uid="uid://cdkylfosjptn4" path="res://OIP.jpg" id="1_1erje"]
+[ext_resource type="Texture2D" path="res://OIP.jpg" id="1_1erje"]
 [ext_resource type="Texture2D" uid="uid://0cubncd60hpa" path="res://Cube.png" id="2_m22wp"]
 [ext_resource type="Script" uid="uid://wsn35dvx83pc" path="res://water.gd" id="3_hh5uf"]
 [ext_resource type="PackedScene" uid="uid://dvej3pm8r4ctm" path="res://BBQ.tscn" id="4_6whob"]

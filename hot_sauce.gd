@@ -1,6 +1,8 @@
 @tool
 extends Node2D
-class_name Water
+class_name hotSauce
+
+
 @export_range(2, 512)
 var segment_count: int = 64
 
@@ -8,8 +10,8 @@ var segment_count: int = 64
 @export var surface_pos_y: float = 0.0
 
 @export var surface_line_thickness: float = 2.0
-@export var surface_color: Color = Color.html("#2e6ed5")
-@export var fill_color: Color = Color.html("#054976")
+@export var surface_color: Color = Color.html("#D61010")
+@export var fill_color: Color = Color.html("#870300")
 
 var surface_line: Line2D
 var fill_polygon: Polygon2D
