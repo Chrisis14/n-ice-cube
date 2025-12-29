@@ -14,6 +14,7 @@ extends CharacterBody2D
 var wall_climb_enabled := false
 var jal_power = false
 var on_wall := false
+var at_end := false
 
 func _ready() -> void:
 	add_to_group("can_interact_with_water")
@@ -21,7 +22,7 @@ func _ready() -> void:
 
 func enable_wall_climb():
 	wall_climb_enabled = true
-	speed = 200
+	speed = 150
 	
 func enable_jal_power():
 	jal_power = true
@@ -93,3 +94,23 @@ func _on_water_collision_body_entered(body: Node2D) -> void:
 			
 		hit_icey.disabled = false
 		hit_wat.disabled = true
+
+func _on_slow_powder_body_entered(body: Node2D) -> void:
+	speed = 200
+
+
+func _on_slow_powder_body_exited(body: Node2D) -> void:
+	speed = 400
+
+
+func _on_ice_box_body_entered(body: Node2D) -> void:
+	if body.is_in_group("player"):
+		at_end = true
+
+func _on_ice_box_body_exited(body: Node2D) -> void:
+	if body.is_in_group("player"):
+		at_end = false
+		
+func _process(delta: float) -> void:
+	if at_end and Input.is_action_just_pressed("NEXT_LEVEL"):
+		get_tree().change_scene_to_file("res://Scenes/Level_2.tscn")
