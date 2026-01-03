@@ -22,7 +22,10 @@ var update_water_button := func():
 func _ready():
 	_make_nodes()
 	update_water()
-
+	
+func _on_body_entered(body):
+	if not body.is_in_group("player"):
+		body.queue_free()
 
 func _make_nodes():
 	# Remove old if regenerating

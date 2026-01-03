@@ -1,0 +1,295 @@
+[gd_scene load_steps=20 format=4 uid="uid://kpx3h171fq14"]
+
+[ext_resource type="Script" uid="uid://ufswu4nmmww0" path="res://Player/player.gd" id="1_o6rv5"]
+[ext_resource type="Texture2D" uid="uid://drtcn6hy2ulyy" path="res://cube.png" id="2_cgtb5"]
+[ext_resource type="Texture2D" uid="uid://cnfm4o4judrr5" path="res://Environment/Tilemap/Ground.png" id="3_smlei"]
+[ext_resource type="Script" uid="uid://bf2qdjtbgykeg" path="res://hot_sauce.gd" id="4_cgtb5"]
+[ext_resource type="Script" uid="uid://cyc63afsidflb" path="res://Scenes/kill_zone.gd" id="5_smlei"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rcj2p"]
+size = Vector2(55, 56.625)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5xm85"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jhjuy"]
+texture = ExtResource("3_smlei")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, -2, 16, 16, -12, 16)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, -2, 16, 16, -16, 16, -16, -2)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, 2, 16, -16, -16, -16, -16, 2)
+3:2/0 = 0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(13, -16, -16, -16, -16, 2)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(12.951727, -16, 12.951727, 16, -16, 16, -16, -16)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(13, 16, -16, 16, -16, -2)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, -2, 16, 16, -16, 16, -16, -2)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-12.951727, -16, -12.951727, 16, 16, 16, 16, -16)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-13, -16, 16, -16, 16, 2)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, 2, 16, -16, -16, -16, -16, 2)
+3:5/0 = 0
+3:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, -16, 16, -13, 16, -13, -16)
+4:5/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+5:7/0 = 0
+5:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, 1.015255, 16, 16, -16, 16, -16, 0.8992939)
+6:7/0 = 0
+6:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, -16, 16, 16, -16, 16, -16, 0.8992939, -5.7353516, 0.95589066)
+7:7/0 = 0
+7:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+7:6/0 = 0
+7:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, -16, 16, 16, -16, 16)
+7:5/0 = 0
+7:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, -16, 16, 16, 13, 16, 13, -16)
+6:5/0 = 0
+5:5/0 = 0
+6:6/0 = 0
+3:6/0 = 0
+3:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, -16, 16, 16, 16)
+3:7/0 = 0
+3:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+4:7/0 = 0
+4:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, -16, 16, 16, 16, 16, 0.8992939, 5.7353516, 0.95589066)
+1:4/0 = 0
+1:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -13, 16, -13, 16, 16, -16, 16)
+2:4/0 = 0
+2:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -13, 16, -13, 16, 16, -16, 16)
+3:4/0 = 0
+3:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, -16, 16, -13, 16, -13, -16)
+
+[sub_resource type="TileSet" id="TileSet_yeb0u"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 1
+sources/1 = SubResource("TileSetAtlasSource_jhjuy")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t785m"]
+size = Vector2(95, 9)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i7t2s"]
+size = Vector2(67, 13)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pqfbu"]
+size = Vector2(70, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_etsvn"]
+size = Vector2(67, 13)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r7uni"]
+size = Vector2(68, 11.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j2suw"]
+size = Vector2(66.5, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_adv88"]
+size = Vector2(116, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_smlei"]
+size = Vector2(178, 5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xmdbj"]
+size = Vector2(241, 52)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lntya"]
+size = Vector2(2364, 777)
+
+[node name="Level13" type="Node2D"]
+
+[node name="Player" type="CharacterBody2D" parent="." groups=["can_interact_with_water", "immune_ice", "player"]]
+position = Vector2(-2107, -2293)
+script = ExtResource("1_o6rv5")
+
+[node name="Icey_Cube" type="CollisionShape2D" parent="Player"]
+position = Vector2(395, 1364)
+shape = SubResource("RectangleShape2D_rcj2p")
+
+[node name="S_Icey" type="Sprite2D" parent="Player"]
+texture_filter = 1
+position = Vector2(394, 1363)
+scale = Vector2(1.7187499, 1.75)
+texture = ExtResource("2_cgtb5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+visible = false
+shape = SubResource("RectangleShape2D_5xm85")
+
+[node name="S_Wat" type="ColorRect" parent="Player"]
+visible = false
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(385, 1338)
+
+[node name="Layer1" type="TileMapLayer" parent="."]
+texture_filter = 1
+use_parent_material = true
+position = Vector2(-51, -62)
+tile_map_data = PackedByteArray("AADL/+b/AQADAAcAAADM/+b/AQADAAcAAADM/+f/AQADAAcAAADL/+f/AQADAAcAAADQ/+f/AQADAAcAAADR/+f/AQADAAcAAADQ/+b/AQADAAcAAADR/+b/AQADAAcAAADS/+b/AQADAAcAAADS/+f/AQADAAcAAADW/+b/AQABAAQAAADW/+f/AQADAAcAAADX/+b/AQABAAQAAADX/+f/AQADAAcAAADb/+b/AQABAAQAAADb/+f/AQADAAcAAADc/+b/AQABAAQAAADc/+f/AQADAAcAAADg/+b/AQABAAQAAADg/+f/AQADAAcAAADh/+b/AQABAAQAAADh/+f/AQADAAcAAADy/+b/AQABAAQAAADy/+f/AQADAAcAAADz/+b/AQABAAQAAADz/+f/AQADAAcAAAD5/+b/AQABAAQAAAD5/+f/AQADAAcAAAAMAOb/AQABAAQAAAAMAOf/AQADAAcAAAANAOb/AQABAAQAAAANAOf/AQADAAcAAAAOAOb/AQABAAQAAAAOAOf/AQADAAcAAAAPAOb/AQABAAQAAAAPAOf/AQADAAcAAAAQAOb/AQABAAQAAAAQAOf/AQADAAcAAAARAOb/AQABAAQAAAARAOf/AQADAAcAAAASAOb/AQABAAQAAAASAOf/AQADAAcAAAATAOb/AQABAAQAAAATAOf/AQADAAcAAADy/+j/AQADAAcAAADz/+j/AQADAAcAAAD0/+j/AQADAAcAAAD1/+j/AQADAAcAAAD2/+j/AQADAAcAAAD3/+j/AQADAAcAAAD4/+j/AQADAAcAAAD5/+j/AQADAAcAAAD+/+j/AQADAAcAAAAMAOj/AQADAAcAAAANAOj/AQADAAcAAAAOAOj/AQADAAcAAAAPAOj/AQADAAcAAAAQAOj/AQADAAcAAAARAOj/AQADAAcAAAASAOj/AQADAAcAAAATAOj/AQADAAcAAADx/+b/AQABAAQAAADw/+f/AQADAAcAAADx/+f/AQADAAcAAADq/+f/AQADAAcAAADr/+f/AQADAAcAAADv/+f/AQADAAcAAADq/+b/AQABAAQAAADr/+b/AQABAAQAAADv/+b/AQABAAQAAADw/+b/AQABAAQAAADl/+b/AQABAAQAAADl/+f/AQADAAcAAADm/+b/AQABAAQAAADm/+f/AQADAAcAAAD0/+b/AQABAAQAAAD0/+f/AQADAAcAAAD1/+b/AQABAAQAAAD1/+f/AQADAAcAAAD2/+b/AQABAAQAAAD2/+f/AQADAAcAAAD3/+b/AQABAAQAAAD3/+f/AQADAAcAAAD4/+b/AQABAAQAAAD4/+f/AQADAAcAAAD+/+b/AQABAAQAAAD+/+f/AQADAAcAAADW/+j/AQADAAcAAADX/+j/AQADAAcAAADb/+j/AQADAAcAAADc/+j/AQADAAcAAADg/+j/AQADAAcAAADh/+j/AQADAAcAAADl/+j/AQADAAcAAADm/+j/AQADAAcAAADq/+j/AQADAAcAAADr/+j/AQADAAcAAADv/+j/AQADAAcAAADw/+j/AQADAAcAAADx/+j/AQADAAcAAADL/+j/AQADAAcAAADM/+j/AQADAAcAAADQ/+j/AQADAAcAAADR/+j/AQADAAcAAADS/+j/AQADAAcAAADs/+b/AQABAAQAAADs/+f/AQADAAcAAADs/+j/AQADAAcAAADt/+b/AQABAAQAAADt/+f/AQADAAcAAADt/+j/AQADAAcAAADu/+b/AQABAAQAAADu/+f/AQADAAcAAADu/+j/AQADAAcAAAD6/+b/AQABAAQAAAD6/+f/AQADAAcAAAD6/+j/AQADAAcAAAD7/+b/AQABAAQAAAD7/+f/AQADAAcAAAD7/+j/AQADAAcAAAALAOb/AQABAAQAAAALAOf/AQADAAcAAAALAOj/AQADAAcAAAD8/+b/AQABAAQAAAD8/+f/AQADAAcAAAD8/+j/AQADAAcAAAD9/+b/AQABAAQAAAD9/+f/AQADAAcAAAD9/+j/AQADAAcAAAD//+b/AQABAAQAAAD//+f/AQADAAcAAAD//+j/AQADAAcAAAAAAOb/AQABAAQAAAAAAOf/AQADAAcAAAAAAOj/AQADAAcAAAABAOb/AQABAAQAAAABAOf/AQADAAcAAAABAOj/AQADAAcAAAACAOb/AQABAAQAAAACAOf/AQADAAcAAAACAOj/AQADAAcAAAADAOj/AQADAAcAAAAEAOj/AQADAAcAAAAFAOj/AQADAAcAAAAGAOj/AQADAAcAAAAHAOj/AQADAAcAAAAIAOj/AQADAAcAAAAJAOj/AQADAAcAAAAKAOj/AQADAAcAAAA=")
+tile_set = SubResource("TileSet_yeb0u")
+rendering_quadrant_size = 32
+physics_quadrant_size = 32
+
+[node name="slow_powder" type="Area2D" parent="."]
+position = Vector2(-49, -60)
+
+[node name="ColorRect" type="ColorRect" parent="slow_powder"]
+offset_left = -1537.0
+offset_top = -836.0
+offset_right = -1442.0
+offset_bottom = -827.0
+color = Color(0.5867031, 0.99664456, 0.81137854, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="slow_powder"]
+position = Vector2(-1489.5, -831.5)
+shape = SubResource("RectangleShape2D_t785m")
+
+[node name="slow_powder2" type="Area2D" parent="."]
+position = Vector2(128, -70)
+
+[node name="ColorRect" type="ColorRect" parent="slow_powder2"]
+offset_left = -1524.0
+offset_top = -831.0
+offset_right = -1458.0
+offset_bottom = -820.0
+color = Color(0.5867031, 0.99664456, 0.81137854, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="slow_powder2"]
+position = Vector2(-1491.5, -825.5)
+shape = SubResource("RectangleShape2D_i7t2s")
+
+[node name="slow_powder3" type="Area2D" parent="."]
+position = Vector2(287, -70)
+
+[node name="ColorRect" type="ColorRect" parent="slow_powder3"]
+offset_left = -1524.0
+offset_top = -836.0
+offset_right = -1456.0
+offset_bottom = -822.0
+color = Color(0.5867031, 0.99664456, 0.81137854, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="slow_powder3"]
+position = Vector2(-1489, -828.5)
+shape = SubResource("RectangleShape2D_pqfbu")
+
+[node name="slow_powder4" type="Area2D" parent="."]
+position = Vector2(449, -70)
+
+[node name="ColorRect" type="ColorRect" parent="slow_powder4"]
+offset_left = -1524.0
+offset_top = -836.0
+offset_right = -1459.0
+offset_bottom = -823.0
+color = Color(0.5867031, 0.99664456, 0.81137854, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="slow_powder4"]
+position = Vector2(-1491.5, -829.5)
+shape = SubResource("RectangleShape2D_etsvn")
+
+[node name="slow_powder5" type="Area2D" parent="."]
+position = Vector2(606, -65)
+
+[node name="ColorRect" type="ColorRect" parent="slow_powder5"]
+offset_left = -1521.0
+offset_top = -836.0
+offset_right = -1459.0
+offset_bottom = -825.0
+color = Color(0.5867031, 0.99664456, 0.81137854, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="slow_powder5"]
+position = Vector2(-1491, -830.75)
+shape = SubResource("RectangleShape2D_r7uni")
+
+[node name="slow_powder6" type="Area2D" parent="."]
+position = Vector2(-223, -67)
+
+[node name="ColorRect" type="ColorRect" parent="slow_powder6"]
+offset_left = -1523.0
+offset_top = -834.0
+offset_right = -1459.0
+offset_bottom = -821.0
+color = Color(0.5867031, 0.99664456, 0.81137854, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="slow_powder6"]
+position = Vector2(-1491, -827)
+shape = SubResource("RectangleShape2D_j2suw")
+
+[node name="Ice_Box2" type="Area2D" parent="."]
+position = Vector2(-14, -1061)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ice_Box2"]
+position = Vector2(511, 146)
+shape = SubResource("RectangleShape2D_adv88")
+
+[node name="ColorRect" type="ColorRect" parent="Ice_Box2"]
+z_index = -1
+offset_left = 454.0
+offset_top = 126.0
+offset_right = 571.0
+offset_bottom = 167.0
+color = Color(8.1822276e-07, 0.49558145, 0.49627864, 1)
+
+[node name="speed_powder" type="Area2D" parent="."]
+position = Vector2(-304, -1119)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="speed_powder"]
+position = Vector2(284, 221)
+shape = SubResource("RectangleShape2D_smlei")
+
+[node name="ColorRect" type="ColorRect" parent="speed_powder"]
+offset_left = 196.0
+offset_top = 217.0
+offset_right = 351.0
+offset_bottom = 225.0
+color = Color(0.5882353, 0.30980393, 0.8117647, 1)
+
+[node name="hotSauce" type="Node2D" parent="."]
+position = Vector2(45, -889)
+script = ExtResource("4_cgtb5")
+surface_color = Color(0.8392157, 0.0627451, 0.0627451, 1)
+fill_color = Color(0.5294118, 0.011764706, 0, 1)
+metadata/_custom_type_script = "uid://bf2qdjtbgykeg"
+
+[node name="hot_sauce_collision" type="Area2D" parent="hotSauce"]
+position = Vector2(910, 642)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hotSauce/hot_sauce_collision"]
+position = Vector2(-779.5, -612)
+shape = SubResource("RectangleShape2D_xmdbj")
+
+[node name="kill_zone" type="Area2D" parent="."]
+script = ExtResource("5_smlei")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="kill_zone"]
+position = Vector2(-576, -378.5)
+shape = SubResource("RectangleShape2D_lntya")
+
+[connection signal="body_entered" from="slow_powder" to="Player" method="_on_slow_powder_body_entered"]
+[connection signal="body_exited" from="slow_powder" to="Player" method="_on_slow_powder_body_exited"]
+[connection signal="body_entered" from="slow_powder2" to="Player" method="_on_slow_powder_body_entered"]
+[connection signal="body_exited" from="slow_powder2" to="Player" method="_on_slow_powder_body_exited"]
+[connection signal="body_entered" from="slow_powder3" to="Player" method="_on_slow_powder_body_entered"]
+[connection signal="body_exited" from="slow_powder3" to="Player" method="_on_slow_powder_body_exited"]
+[connection signal="body_entered" from="slow_powder4" to="Player" method="_on_slow_powder_body_entered"]
+[connection signal="body_exited" from="slow_powder4" to="Player" method="_on_slow_powder_body_exited"]
+[connection signal="body_entered" from="slow_powder5" to="Player" method="_on_slow_powder_body_entered"]
+[connection signal="body_exited" from="slow_powder5" to="Player" method="_on_slow_powder_body_exited"]
+[connection signal="body_entered" from="slow_powder6" to="Player" method="_on_slow_powder_body_entered"]
+[connection signal="body_exited" from="slow_powder6" to="Player" method="_on_slow_powder_body_exited"]
+[connection signal="body_entered" from="Ice_Box2" to="Player" method="_on_ice_box_body_entered"]
+[connection signal="body_exited" from="Ice_Box2" to="Player" method="_on_ice_box_body_exited"]
+[connection signal="body_entered" from="speed_powder" to="Player" method="_on_speed_powder_body_entered"]
+[connection signal="body_exited" from="speed_powder" to="Player" method="_on_speed_powder_body_exited"]
+[connection signal="body_entered" from="hotSauce/hot_sauce_collision" to="Player" method="_on_hot_sauce_collision_body_entered"]
+[connection signal="body_entered" from="kill_zone" to="Player" method="_on_kill_zone_body_entered"]

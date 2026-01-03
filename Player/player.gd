@@ -15,8 +15,12 @@ var wall_climb_enabled := false
 var jal_power = false
 var on_wall := false
 var at_end := false
+var default_jump_velocity := -1200
+var coyote_time := 0.12
+var coyote_timer := 0.0
 
 func _ready() -> void:
+	default_jump_velocity = jump_velocity
 	add_to_group("can_interact_with_water")
 	add_to_group("player")
 
@@ -37,9 +41,14 @@ func _physics_process(delta: float) -> void:
 		# Gravity
 	if not is_on_floor():
 		velocity.y += gravity * delta
+	
+	if is_on_floor():
+		coyote_timer = coyote_time
+	else:
+		coyote_timer -= delta
 
 		# Jump
-	if Input.is_action_just_pressed("UP") and is_on_floor():
+	if Input.is_action_just_pressed("UP") and coyote_timer > 0:
 		velocity.y = jump_velocity
 
 		# Check walls
@@ -94,13 +103,15 @@ func _on_water_collision_body_entered(body: Node2D) -> void:
 			
 		hit_icey.disabled = false
 		hit_wat.disabled = true
-
+		
 func _on_slow_powder_body_entered(body: Node2D) -> void:
 	speed = 200
+	jump_velocity = -800
 
 
 func _on_slow_powder_body_exited(body: Node2D) -> void:
 	speed = 400
+	jump_velocity = -1200
 
 
 func _on_ice_box_body_entered(body: Node2D) -> void:
@@ -113,4 +124,17 @@ func _on_ice_box_body_exited(body: Node2D) -> void:
 		
 func _process(delta: float) -> void:
 	if at_end and Input.is_action_just_pressed("NEXT_LEVEL"):
-		get_tree().change_scene_to_file("res://Scenes/Level_2.tscn")
+		LevelManager.load_next_level()
+
+
+func _on_speed_powder_body_entered(body: Node2D) -> void:
+	speed = 900
+	jump_velocity = -1600
+
+
+func _on_speed_powder_body_exited(body: Node2D) -> void:
+	speed = 400
+	jump_velocity = -1200
+	
+func _on_kill_zone_body_entered(body: Node2D) -> void:
+	get_tree().reload_current_scene()

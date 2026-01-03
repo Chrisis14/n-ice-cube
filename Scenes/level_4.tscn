@@ -1,0 +1,198 @@
+[gd_scene load_steps=14 format=4 uid="uid://daagk34ay3avh"]
+
+[ext_resource type="Script" uid="uid://ufswu4nmmww0" path="res://Player/player.gd" id="1_f6i20"]
+[ext_resource type="Texture2D" uid="uid://drtcn6hy2ulyy" path="res://Cube.png" id="2_dvrgg"]
+[ext_resource type="Script" uid="uid://wsn35dvx83pc" path="res://water.gd" id="3_wk15n"]
+[ext_resource type="Script" uid="uid://cf58t00048oni" path="res://melt_plate.gd" id="4_5a8oa"]
+[ext_resource type="Texture2D" uid="uid://cnfm4o4judrr5" path="res://Environment/Tilemap/Ground.png" id="5_3ntyy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_48hld"]
+size = Vector2(31, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xcfcc"]
+size = Vector2(55, 9)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l45re"]
+size = Vector2(154.75, 55.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_na6m6"]
+size = Vector2(91, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f6i20"]
+texture = ExtResource("5_3ntyy")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, -2, 16, 16, -12, 16)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, -2, 16, 16, -16, 16, -16, -2)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, 2, 16, -16, -16, -16, -16, 2)
+3:2/0 = 0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(13, -16, -16, -16, -16, 2)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(12.951727, -16, 12.951727, 16, -16, 16, -16, -16)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(13, 16, -16, 16, -16, -2)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, -2, 16, 16, -16, 16, -16, -2)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-12.951727, -16, -12.951727, 16, 16, 16, 16, -16)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-13, -16, 16, -16, 16, 2)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, 2, 16, -16, -16, -16, -16, 2)
+3:5/0 = 0
+3:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, -16, 16, -13, 16, -13, -16)
+4:5/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+5:7/0 = 0
+5:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, 1.015255, 16, 16, -16, 16, -16, 0.8992939)
+6:7/0 = 0
+6:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, -16, 16, 16, -16, 16, -16, 0.8992939, -5.7353516, 0.95589066)
+7:7/0 = 0
+7:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+7:6/0 = 0
+7:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, -16, 16, 16, -16, 16)
+7:5/0 = 0
+7:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, -16, 16, 16, 13, 16, 13, -16)
+6:5/0 = 0
+5:5/0 = 0
+6:6/0 = 0
+3:6/0 = 0
+3:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, -16, 16, 16, 16)
+3:7/0 = 0
+3:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+4:7/0 = 0
+4:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, -16, 16, 16, 16, 16, 0.8992939, 5.7353516, 0.95589066)
+1:4/0 = 0
+1:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -13, 16, -13, 16, 16, -16, 16)
+2:4/0 = 0
+2:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -13, 16, -13, 16, 16, -16, 16)
+3:4/0 = 0
+3:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, -16, 16, -13, 16, -13, -16)
+
+[sub_resource type="TileSet" id="TileSet_di0d6"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 1
+sources/1 = SubResource("TileSetAtlasSource_f6i20")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_54c2w"]
+size = Vector2(79, 200)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f6i20"]
+size = Vector2(116, 42)
+
+[node name="Level 5" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -859.0
+offset_top = 648.0
+offset_right = 294.0
+offset_bottom = 1294.0
+
+[node name="Player" type="CharacterBody2D" parent="." groups=["can_interact_with_water", "immune_ice", "player"]]
+position = Vector2(404.5, 588.5)
+script = ExtResource("1_f6i20")
+
+[node name="Hit_Icey" type="CollisionShape2D" parent="Player"]
+position = Vector2(-1109.5, 21.5)
+shape = SubResource("RectangleShape2D_48hld")
+
+[node name="S_Icey" type="Sprite2D" parent="Player"]
+texture_filter = 1
+position = Vector2(-1109.5, 22.499989)
+scale = Vector2(0.96875006, 0.9687505)
+texture = ExtResource("2_dvrgg")
+
+[node name="Hit_Wat" type="CollisionShape2D" parent="Player"]
+visible = false
+position = Vector2(-1104.5, 31.5)
+shape = SubResource("RectangleShape2D_xcfcc")
+disabled = true
+
+[node name="S_Wat" type="ColorRect" parent="Player"]
+visible = false
+offset_left = -1132.5
+offset_top = 25.5
+offset_right = -1077.5
+offset_bottom = 36.5
+color = Color(0.27450982, 1, 1, 1)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(-1107.5, 21.5)
+
+[node name="Water" type="Node2D" parent="."]
+z_index = -1
+position = Vector2(587, 629)
+script = ExtResource("3_wk15n")
+water_size = Vector2(161, 61)
+surface_color = Color(0.18039216, 0.43137255, 0.8352941, 1)
+fill_color = Color(0.019607844, 0.28627452, 0.4627451, 1)
+metadata/_custom_type_script = "uid://wsn35dvx83pc"
+
+[node name="water_collision" type="Area2D" parent="Water"]
+position = Vector2(34, 13)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Water/water_collision"]
+position = Vector2(46, 16.25)
+shape = SubResource("RectangleShape2D_l45re")
+
+[node name="melting_plate" type="StaticBody2D" parent="." groups=["plate"]]
+position = Vector2(405.5, 591)
+script = ExtResource("4_5a8oa")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="melting_plate"]
+position = Vector2(-474, 31)
+shape = SubResource("RectangleShape2D_na6m6")
+
+[node name="ColorRect3" type="ColorRect" parent="melting_plate"]
+offset_left = -520.5
+offset_top = 26.0
+offset_right = -428.5
+offset_bottom = 35.0
+color = Color(0.55218315, 0.13592046, 0.31290835, 1)
+
+[node name="Layer0" type="TileMapLayer" parent="."]
+texture_filter = 1
+use_parent_material = true
+position = Vector2(43, 370)
+tile_map_data = PackedByteArray("AAAeAAgAAQABAAQAAAAeAAkAAQADAAcAAAAeAAoAAQADAAcAAAAeAAsAAQADAAcAAAAeAAwAAQADAAcAAAAfAAgAAQABAAQAAAAfAAkAAQADAAcAAAAfAAoAAQADAAcAAAAfAAsAAQADAAcAAAAfAAwAAQADAAcAAAAgAAgAAQABAAQAAAAgAAkAAQADAAcAAAAgAAoAAQADAAcAAAAgAAsAAQADAAcAAAAgAAwAAQADAAcAAAAhAAgAAQABAAQAAAAhAAkAAQADAAcAAAAhAAoAAQADAAcAAAAhAAsAAQADAAcAAAAhAAwAAQADAAcAAAAiAAgAAQABAAQAAAAiAAkAAQADAAcAAAAiAAoAAQADAAcAAAAiAAsAAQADAAcAAAAiAAwAAQADAAcAAAAjAAgAAQABAAQAAAAjAAkAAQADAAcAAAAjAAoAAQADAAcAAAAjAAsAAQADAAcAAAAjAAwAAQADAAcAAAAkAAgAAQABAAQAAAAkAAkAAQADAAcAAAAkAAoAAQADAAcAAAAkAAsAAQADAAcAAAAkAAwAAQADAAcAAAAlAAgAAQABAAQAAAAlAAkAAQADAAcAAAAlAAoAAQADAAcAAAAlAAsAAQADAAcAAAAlAAwAAQADAAcAAAAmAAgAAQABAAQAAAAmAAkAAQADAAcAAAAmAAoAAQADAAcAAAAmAAsAAQADAAcAAAAmAAwAAQADAAcAAAAnAAgAAQABAAQAAAAnAAkAAQADAAcAAAAnAAoAAQADAAcAAAAnAAsAAQADAAcAAAAnAAwAAQADAAcAAAAoAAgAAQABAAQAAAAoAAkAAQADAAcAAAAoAAoAAQADAAcAAAAoAAsAAQADAAcAAAAoAAwAAQADAAcAAAD2/wgAAQABAAQAAAD2/wkAAQADAAcAAAD2/woAAQADAAcAAAD2/wsAAQADAAcAAAD2/wwAAQADAAcAAAD3/wgAAQABAAQAAAD3/wkAAQADAAcAAAD3/woAAQADAAcAAAD3/wsAAQADAAcAAAD3/wwAAQADAAcAAAD4/wgAAQABAAQAAAD4/wkAAQADAAcAAAD4/woAAQADAAcAAAD4/wsAAQADAAcAAAD4/wwAAQADAAcAAAD5/wgAAQABAAQAAAD5/wkAAQADAAcAAAD5/woAAQADAAcAAAD5/wsAAQADAAcAAAD5/wwAAQADAAcAAAD6/wgAAQABAAQAAAD6/wkAAQADAAcAAAD6/woAAQADAAcAAAD6/wsAAQADAAcAAAD6/wwAAQADAAcAAAD7/wgAAQABAAQAAAD7/wkAAQADAAcAAAD7/woAAQADAAcAAAD7/wsAAQADAAcAAAD7/wwAAQADAAcAAAD8/wgAAQABAAQAAAD8/wkAAQADAAcAAAD8/woAAQADAAcAAAD8/wsAAQADAAcAAAD8/wwAAQADAAcAAAD9/wgAAQABAAQAAAD9/wkAAQADAAcAAAD9/woAAQADAAcAAAD9/wsAAQADAAcAAAD9/wwAAQADAAcAAAD+/wgAAQABAAQAAAD+/wkAAQADAAcAAAD+/woAAQADAAcAAAD+/wsAAQADAAcAAAD+/wwAAQADAAcAAAD//wgAAQABAAQAAAD//wkAAQADAAcAAAD//woAAQADAAcAAAD//wsAAQADAAcAAAD//wwAAQADAAcAAAAAAAgAAQABAAQAAAAAAAkAAQADAAcAAAAAAAoAAQADAAcAAAAAAAsAAQADAAcAAAAAAAwAAQADAAcAAAABAAgAAQABAAQAAAABAAkAAQADAAcAAAABAAoAAQADAAcAAAABAAsAAQADAAcAAAABAAwAAQADAAcAAAACAAgAAQABAAQAAAACAAkAAQADAAcAAAACAAoAAQADAAcAAAACAAsAAQADAAcAAAACAAwAAQADAAcAAAADAAgAAQABAAQAAAADAAkAAQADAAcAAAADAAoAAQADAAcAAAADAAsAAQADAAcAAAADAAwAAQADAAcAAAAEAAgAAQABAAQAAAAEAAkAAQADAAcAAAAEAAoAAQADAAcAAAAEAAsAAQADAAcAAAAEAAwAAQADAAcAAAAFAAgAAQABAAQAAAAFAAkAAQADAAcAAAAFAAoAAQADAAcAAAAFAAsAAQADAAcAAAAFAAwAAQADAAcAAAAGAAgAAQABAAQAAAAGAAkAAQADAAcAAAAGAAoAAQADAAcAAAAGAAsAAQADAAcAAAAGAAwAAQADAAcAAAAHAAgAAQABAAQAAAAHAAkAAQADAAcAAAAHAAoAAQADAAcAAAAHAAsAAQADAAcAAAAHAAwAAQADAAcAAAAIAAgAAQABAAQAAAAIAAkAAQADAAcAAAAIAAoAAQADAAcAAAAIAAsAAQADAAcAAAAIAAwAAQADAAcAAAAJAAgAAQABAAQAAAAJAAkAAQADAAcAAAAJAAoAAQADAAcAAAAJAAsAAQADAAcAAAAJAAwAAQADAAcAAAAKAAgAAQABAAQAAAAKAAkAAQADAAcAAAAKAAoAAQADAAcAAAAKAAsAAQADAAcAAAAKAAwAAQADAAcAAAALAAgAAQABAAQAAAALAAkAAQADAAcAAAALAAoAAQADAAcAAAALAAsAAQADAAcAAAALAAwAAQADAAcAAAAMAAgAAQABAAQAAAAMAAkAAQADAAcAAAAMAAoAAQADAAcAAAAMAAsAAQADAAcAAAAMAAwAAQADAAcAAAANAAgAAQABAAQAAAANAAkAAQADAAcAAAANAAoAAQADAAcAAAANAAsAAQADAAcAAAANAAwAAQADAAcAAAAOAAgAAQABAAQAAAAOAAkAAQADAAcAAAAOAAoAAQADAAcAAAAOAAsAAQADAAcAAAAOAAwAAQADAAcAAAAPAAgAAQABAAQAAAAPAAkAAQADAAcAAAAPAAoAAQADAAcAAAAPAAsAAQADAAcAAAAPAAwAAQADAAcAAAAQAAgAAQABAAQAAAAQAAkAAQADAAcAAAAQAAoAAQADAAcAAAAQAAsAAQADAAcAAAAQAAwAAQADAAcAAAARAAsAAQADAAcAAAARAAwAAQADAAcAAAASAAsAAQADAAcAAAASAAwAAQADAAcAAAATAAsAAQADAAcAAAATAAwAAQADAAcAAAAUAAsAAQADAAcAAAAUAAwAAQADAAcAAAAVAAsAAQADAAcAAAAVAAwAAQADAAcAAAAWAAoAAQADAAcAAAAWAAsAAQADAAcAAAAWAAwAAQADAAcAAAAXAAgAAQABAAQAAAAXAAkAAQADAAcAAAAXAAoAAQADAAcAAAAXAAsAAQADAAcAAAAXAAwAAQADAAcAAAAYAAgAAQABAAQAAAAYAAkAAQADAAcAAAAYAAoAAQADAAcAAAAYAAsAAQADAAcAAAAYAAwAAQADAAcAAAAZAAgAAQABAAQAAAAZAAkAAQADAAcAAAAZAAoAAQADAAcAAAAZAAsAAQADAAcAAAAZAAwAAQADAAcAAAAaAAgAAQABAAQAAAAaAAkAAQADAAcAAAAaAAoAAQADAAcAAAAaAAsAAQADAAcAAAAaAAwAAQADAAcAAAAbAAgAAQABAAQAAAAbAAkAAQADAAcAAAAbAAoAAQADAAcAAAAbAAsAAQADAAcAAAAbAAwAAQADAAcAAAAcAAgAAQABAAQAAAAcAAkAAQADAAcAAAAcAAoAAQADAAcAAAAcAAsAAQADAAcAAAAcAAwAAQADAAcAAAAdAAgAAQABAAQAAAAdAAkAAQADAAcAAAAdAAoAAQADAAcAAAAdAAsAAQADAAcAAAAdAAwAAQADAAcAAADu/wgAAQABAAQAAADu/wkAAQADAAcAAADu/woAAQADAAcAAADu/wsAAQADAAcAAADu/wwAAQADAAcAAADv/wgAAQABAAQAAADv/wkAAQADAAcAAADv/woAAQADAAcAAADv/wsAAQADAAcAAADv/wwAAQADAAcAAADw/wgAAQABAAQAAADw/wkAAQADAAcAAADw/woAAQADAAcAAADw/wsAAQADAAcAAADw/wwAAQADAAcAAADx/wgAAQABAAQAAADx/wkAAQADAAcAAADx/woAAQADAAcAAADx/wsAAQADAAcAAADx/wwAAQADAAcAAADy/wgAAQABAAQAAADy/wkAAQADAAcAAADy/woAAQADAAcAAADy/wsAAQADAAcAAADy/wwAAQADAAcAAADt/wwAAQADAAcAAADs/wwAAQADAAcAAADs/wsAAQADAAcAAADr/wsAAQADAAcAAADr/woAAQADAAcAAADq/woAAQADAAcAAADq/wkAAQADAAcAAADp/wkAAQADAAcAAADo/wkAAQADAAcAAADo/wgAAQABAAQAAADo/woAAQADAAcAAADo/wsAAQADAAcAAADo/wwAAQADAAcAAADp/wwAAQADAAcAAADq/wwAAQADAAcAAADr/wwAAQADAAcAAADt/wsAAQADAAcAAADt/woAAQADAAcAAADt/wkAAQADAAcAAADs/wkAAQADAAcAAADs/wgAAQABAAQAAADr/wgAAQABAAQAAADq/wgAAQABAAQAAADp/wgAAQABAAQAAADt/wgAAQABAAQAAADs/woAAQADAAcAAADr/wkAAQADAAcAAADq/wsAAQADAAcAAADp/wsAAQADAAcAAADp/woAAQADAAcAAAARAAoAAQADAAcAAAASAAoAAQADAAcAAAATAAoAAQADAAcAAAAUAAoAAQADAAcAAAAVAAoAAQADAAcAAAAWAAkAAQADAAcAAAAWAAgAAQABAAQAAAA=")
+tile_set = SubResource("TileSet_di0d6")
+rendering_quadrant_size = 32
+physics_quadrant_size = 32
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(75.5, 506)
+shape = SubResource("RectangleShape2D_54c2w")
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D"]
+offset_left = 34.0
+offset_top = 405.0
+offset_right = 116.0
+offset_bottom = 606.0
+color = Color(0.27598977, 0.2494292, 0.42607653, 1)
+
+[node name="Ice_Box" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ice_Box"]
+position = Vector2(1186, 605)
+shape = SubResource("RectangleShape2D_f6i20")
+
+[node name="ColorRect" type="ColorRect" parent="Ice_Box"]
+z_index = -1
+offset_left = 1130.0
+offset_top = 585.0
+offset_right = 1247.0
+offset_bottom = 626.0
+color = Color(8.1822276e-07, 0.49558145, 0.49627864, 1)
+
+[connection signal="body_entered" from="Water/water_collision" to="Player" method="_on_water_collision_body_entered"]
+[connection signal="body_entered" from="Ice_Box" to="Player" method="_on_ice_box_body_entered"]
+[connection signal="body_exited" from="Ice_Box" to="Player" method="_on_ice_box_body_exited"]

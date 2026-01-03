@@ -1,0 +1,338 @@
+[gd_scene load_steps=19 format=4 uid="uid://bp6e0r3rgh42y"]
+
+[ext_resource type="Script" uid="uid://ufswu4nmmww0" path="res://Player/player.gd" id="2_j2suw"]
+[ext_resource type="Texture2D" uid="uid://drtcn6hy2ulyy" path="res://Cube.png" id="2_t785m"]
+[ext_resource type="Texture2D" uid="uid://cnfm4o4judrr5" path="res://Environment/Tilemap/Ground.png" id="7_adv88"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rcj2p"]
+size = Vector2(55, 56.625)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5xm85"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jhjuy"]
+texture = ExtResource("7_adv88")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, -2, 16, 16, -12, 16)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, -2, 16, 16, -16, 16, -16, -2)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, 2, 16, -16, -16, -16, -16, 2)
+3:2/0 = 0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(13, -16, -16, -16, -16, 2)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(12.951727, -16, 12.951727, 16, -16, 16, -16, -16)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(13, 16, -16, 16, -16, -2)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, -2, 16, 16, -16, 16, -16, -2)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-12.951727, -16, -12.951727, 16, 16, 16, 16, -16)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-13, -16, 16, -16, 16, 2)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, 2, 16, -16, -16, -16, -16, 2)
+3:5/0 = 0
+3:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, -16, 16, -13, 16, -13, -16)
+4:5/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+5:7/0 = 0
+5:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, 1.015255, 16, 16, -16, 16, -16, 0.8992939)
+6:7/0 = 0
+6:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, -16, 16, 16, -16, 16, -16, 0.8992939, -5.7353516, 0.95589066)
+7:7/0 = 0
+7:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+7:6/0 = 0
+7:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, -16, 16, 16, -16, 16)
+7:5/0 = 0
+7:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, -16, 16, 16, 13, 16, 13, -16)
+6:5/0 = 0
+5:5/0 = 0
+6:6/0 = 0
+3:6/0 = 0
+3:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, -16, 16, 16, 16)
+3:7/0 = 0
+3:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+4:7/0 = 0
+4:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, -16, 16, 16, 16, 16, 0.8992939, 5.7353516, 0.95589066)
+1:4/0 = 0
+1:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -13, 16, -13, 16, 16, -16, 16)
+2:4/0 = 0
+2:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -13, 16, -13, 16, 16, -16, 16)
+3:4/0 = 0
+3:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, -16, 16, -13, 16, -13, -16)
+
+[sub_resource type="TileSet" id="TileSet_yeb0u"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 1
+sources/1 = SubResource("TileSetAtlasSource_jhjuy")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t785m"]
+size = Vector2(95, 9)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i7t2s"]
+size = Vector2(67, 13)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pqfbu"]
+size = Vector2(70, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_etsvn"]
+size = Vector2(67, 13)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r7uni"]
+size = Vector2(68, 11.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j2suw"]
+size = Vector2(66.5, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oxods"]
+size = Vector2(66, 13)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0rukg"]
+size = Vector2(66, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b2krm"]
+size = Vector2(65, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qrwgb"]
+size = Vector2(2198, 22)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_adv88"]
+size = Vector2(116, 40)
+
+[node name="Level10" type="Node2D"]
+
+[node name="Player" type="CharacterBody2D" parent="." groups=["can_interact_with_water", "immune_ice", "player"]]
+position = Vector2(-2107, -2293)
+script = ExtResource("2_j2suw")
+
+[node name="Icey_Cube" type="CollisionShape2D" parent="Player"]
+position = Vector2(395, 1364)
+shape = SubResource("RectangleShape2D_rcj2p")
+
+[node name="S_Icey" type="Sprite2D" parent="Player"]
+texture_filter = 1
+position = Vector2(394, 1363)
+scale = Vector2(1.7187499, 1.75)
+texture = ExtResource("2_t785m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+visible = false
+shape = SubResource("RectangleShape2D_5xm85")
+
+[node name="S_Wat" type="ColorRect" parent="Player"]
+visible = false
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(385, 1338)
+
+[node name="Layer1" type="TileMapLayer" parent="."]
+texture_filter = 1
+use_parent_material = true
+position = Vector2(-51, -62)
+tile_map_data = PackedByteArray("AAATAPz/AQABAAQAAAD+//z/AQABAAQAAAD///z/AQABAAQAAAAAAPz/AQABAAQAAAABAPz/AQABAAQAAAACAPz/AQABAAQAAAADAPz/AQABAAQAAAAEAPz/AQABAAQAAAAFAPz/AQABAAQAAAAGAPz/AQABAAQAAAAHAPz/AQABAAQAAAAIAPz/AQABAAQAAAAJAPz/AQABAAQAAAAKAPz/AQABAAQAAAALAPz/AQABAAQAAAASAPz/AQABAAQAAAARAPz/AQABAAQAAAAQAPz/AQABAAQAAAAPAPz/AQABAAQAAAAOAPz/AQABAAQAAAANAPz/AQABAAQAAAAMAPz/AQABAAQAAADL/+b/AQADAAcAAADM/+b/AQADAAcAAADM/+f/AQADAAcAAADL/+f/AQADAAcAAADN/+f/AQADAAcAAADO/+f/AQADAAcAAADP/+f/AQADAAcAAADQ/+f/AQADAAcAAADR/+f/AQADAAcAAADN/+b/AQADAAcAAADO/+b/AQADAAcAAADP/+b/AQADAAcAAADQ/+b/AQADAAcAAADR/+b/AQADAAcAAADS/+b/AQADAAcAAADS/+f/AQADAAcAAADW/+b/AQADAAcAAADW/+f/AQADAAcAAADX/+b/AQADAAcAAADX/+f/AQADAAcAAADb/+b/AQADAAcAAADb/+f/AQADAAcAAADc/+b/AQADAAcAAADc/+f/AQADAAcAAADg/+b/AQADAAcAAADg/+f/AQADAAcAAADh/+b/AQADAAcAAADh/+f/AQADAAcAAADy/+b/AQADAAcAAADy/+f/AQADAAcAAADz/+b/AQADAAcAAADz/+f/AQADAAcAAAD5/+b/AQADAAcAAAD5/+f/AQADAAcAAAAMAOb/AQABAAQAAAAMAOf/AQADAAcAAAANAOb/AQABAAQAAAANAOf/AQADAAcAAAAOAOb/AQABAAQAAAAOAOf/AQADAAcAAAAPAOb/AQABAAQAAAAPAOf/AQADAAcAAAAQAOb/AQABAAQAAAAQAOf/AQADAAcAAAARAOb/AQABAAQAAAARAOf/AQADAAcAAAASAOb/AQABAAQAAAASAOf/AQADAAcAAAATAOb/AQABAAQAAAATAOf/AQADAAcAAAACAOf/AQADAAcAAAACAOb/AQADAAcAAAADAOf/AQADAAcAAADy/+j/AQADAAcAAADz/+j/AQADAAcAAAD0/+j/AQADAAcAAAD1/+j/AQADAAcAAAD2/+j/AQADAAcAAAD3/+j/AQADAAcAAAD4/+j/AQADAAcAAAD5/+j/AQADAAcAAAD9/+j/AQADAAcAAAD+/+j/AQADAAcAAAACAOj/AQADAAcAAAADAOj/AQADAAcAAAAHAOj/AQADAAcAAAAIAOj/AQADAAcAAAAMAOj/AQADAAcAAAANAOj/AQADAAcAAAAOAOj/AQADAAcAAAAPAOj/AQADAAcAAAAQAOj/AQADAAcAAAARAOj/AQADAAcAAAASAOj/AQADAAcAAAATAOj/AQADAAcAAADx/+b/AQADAAcAAADw/+f/AQADAAcAAADx/+f/AQADAAcAAADq/+f/AQADAAcAAADr/+f/AQADAAcAAADv/+f/AQADAAcAAADq/+b/AQADAAcAAADr/+b/AQADAAcAAADv/+b/AQADAAcAAADw/+b/AQADAAcAAADd//z/AQABAAQAAADe//z/AQABAAQAAADf//z/AQABAAQAAADg//z/AQABAAQAAADh//z/AQABAAQAAADi//z/AQABAAQAAADj//z/AQABAAQAAADk//z/AQABAAQAAADl//z/AQABAAQAAADm//z/AQABAAQAAADn//z/AQABAAQAAADL//z/AQABAAQAAADM//z/AQABAAQAAADN//z/AQABAAQAAADO//z/AQABAAQAAADP//z/AQABAAQAAADQ//z/AQABAAQAAADR//z/AQABAAQAAADS//z/AQABAAQAAADT//z/AQABAAQAAADU//z/AQABAAQAAADV//z/AQABAAQAAADW//z/AQABAAQAAADX//z/AQABAAQAAADY//z/AQABAAQAAADZ//z/AQABAAQAAADa//z/AQABAAQAAADb//z/AQABAAQAAADc//z/AQABAAQAAADo//z/AQABAAQAAADp//z/AQABAAQAAADq//z/AQABAAQAAADr//z/AQABAAQAAADs//z/AQABAAQAAADt//z/AQABAAQAAADu//z/AQABAAQAAADv//z/AQABAAQAAADw//z/AQABAAQAAADx//z/AQABAAQAAADy//z/AQABAAQAAADz//z/AQABAAQAAAD0//z/AQABAAQAAAD1//z/AQABAAQAAAD2//z/AQABAAQAAAD3//z/AQABAAQAAAD4//z/AQABAAQAAAD5//z/AQABAAQAAAD6//z/AQABAAQAAAD7//z/AQABAAQAAAD8//z/AQABAAQAAAD9//z/AQABAAQAAADt//3/AQADAAcAAADt//7/AQADAAcAAADu//3/AQADAAcAAADu//7/AQADAAcAAADv//3/AQADAAcAAADv//7/AQADAAcAAADw//3/AQADAAcAAADw//7/AQADAAcAAADx//3/AQADAAcAAADx//7/AQADAAcAAADy//3/AQADAAcAAADy//7/AQADAAcAAADz//3/AQADAAcAAADz//7/AQADAAcAAAD0//3/AQADAAcAAAD0//7/AQADAAcAAAD1//3/AQADAAcAAAD1//7/AQADAAcAAAD2//3/AQADAAcAAAD2//7/AQADAAcAAAD3//3/AQADAAcAAAD3//7/AQADAAcAAAD4//3/AQADAAcAAAD4//7/AQADAAcAAAD5//3/AQADAAcAAAD5//7/AQADAAcAAAD6//3/AQADAAcAAAD6//7/AQADAAcAAAD7//3/AQADAAcAAAD7//7/AQADAAcAAAD8//3/AQADAAcAAAD8//7/AQADAAcAAAD9//3/AQADAAcAAAD9//7/AQADAAcAAAD+//3/AQADAAcAAAD+//7/AQADAAcAAAD///3/AQADAAcAAAD///7/AQADAAcAAAAAAP3/AQADAAcAAAAAAP7/AQADAAcAAAABAP3/AQADAAcAAAABAP7/AQADAAcAAAACAP3/AQADAAcAAAACAP7/AQADAAcAAAADAP3/AQADAAcAAAADAP7/AQADAAcAAAAEAP3/AQADAAcAAAAEAP7/AQADAAcAAAAFAP3/AQADAAcAAAAFAP7/AQADAAcAAAAGAP3/AQADAAcAAAAGAP7/AQADAAcAAAAHAP3/AQADAAcAAAAHAP7/AQADAAcAAAAIAP3/AQADAAcAAAAIAP7/AQADAAcAAAAJAP3/AQADAAcAAAAJAP7/AQADAAcAAAAKAP3/AQADAAcAAAAKAP7/AQADAAcAAAALAP3/AQADAAcAAAALAP7/AQADAAcAAAAMAP3/AQADAAcAAAAMAP7/AQADAAcAAAANAP3/AQADAAcAAAANAP7/AQADAAcAAAAOAP3/AQADAAcAAAAOAP7/AQADAAcAAAAPAP3/AQADAAcAAAAPAP7/AQADAAcAAAAQAP3/AQADAAcAAAAQAP7/AQADAAcAAAARAP3/AQADAAcAAAARAP7/AQADAAcAAAASAP3/AQADAAcAAAASAP7/AQADAAcAAAATAP3/AQADAAcAAAATAP7/AQADAAcAAADL//3/AQADAAcAAADL//7/AQADAAcAAADM//3/AQADAAcAAADM//7/AQADAAcAAADN//3/AQADAAcAAADN//7/AQADAAcAAADO//3/AQADAAcAAADO//7/AQADAAcAAADP//3/AQADAAcAAADP//7/AQADAAcAAADQ//3/AQADAAcAAADQ//7/AQADAAcAAADR//3/AQADAAcAAADR//7/AQADAAcAAADS//3/AQADAAcAAADS//7/AQADAAcAAADT//3/AQADAAcAAADT//7/AQADAAcAAADU//3/AQADAAcAAADU//7/AQADAAcAAADV//3/AQADAAcAAADV//7/AQADAAcAAADW//3/AQADAAcAAADW//7/AQADAAcAAADX//3/AQADAAcAAADX//7/AQADAAcAAADY//3/AQADAAcAAADY//7/AQADAAcAAADZ//3/AQADAAcAAADZ//7/AQADAAcAAADa//3/AQADAAcAAADa//7/AQADAAcAAADb//3/AQADAAcAAADb//7/AQADAAcAAADc//3/AQADAAcAAADc//7/AQADAAcAAADd//3/AQADAAcAAADd//7/AQADAAcAAADe//3/AQADAAcAAADe//7/AQADAAcAAADf//3/AQADAAcAAADf//7/AQADAAcAAADg//3/AQADAAcAAADg//7/AQADAAcAAADh//3/AQADAAcAAADh//7/AQADAAcAAADi//3/AQADAAcAAADi//7/AQADAAcAAADj//3/AQADAAcAAADj//7/AQADAAcAAADk//3/AQADAAcAAADk//7/AQADAAcAAADl//3/AQADAAcAAADl//7/AQADAAcAAADm//3/AQADAAcAAADm//7/AQADAAcAAADn//3/AQADAAcAAADn//7/AQADAAcAAADo//3/AQADAAcAAADo//7/AQADAAcAAADp//3/AQADAAcAAADp//7/AQADAAcAAADq//3/AQADAAcAAADq//7/AQADAAcAAADr//3/AQADAAcAAADr//7/AQADAAcAAADs//3/AQADAAcAAADs//7/AQADAAcAAADl/+b/AQADAAcAAADl/+f/AQADAAcAAADm/+b/AQADAAcAAADm/+f/AQADAAcAAAD0/+b/AQADAAcAAAD0/+f/AQADAAcAAAD1/+b/AQADAAcAAAD1/+f/AQADAAcAAAD2/+b/AQADAAcAAAD2/+f/AQADAAcAAAD3/+b/AQADAAcAAAD3/+f/AQADAAcAAAD4/+b/AQADAAcAAAD4/+f/AQADAAcAAAD9/+b/AQADAAcAAAD9/+f/AQADAAcAAAD+/+b/AQADAAcAAAD+/+f/AQADAAcAAAAHAOb/AQADAAcAAAAHAOf/AQADAAcAAAAIAOb/AQADAAcAAAAIAOf/AQADAAcAAADW/+j/AQADAAcAAADX/+j/AQADAAcAAADb/+j/AQADAAcAAADc/+j/AQADAAcAAADg/+j/AQADAAcAAADh/+j/AQADAAcAAADl/+j/AQADAAcAAADm/+j/AQADAAcAAADq/+j/AQADAAcAAADr/+j/AQADAAcAAADv/+j/AQADAAcAAADw/+j/AQADAAcAAADx/+j/AQADAAcAAADL/+j/AQADAAcAAADM/+j/AQADAAcAAADN/+j/AQADAAcAAADO/+j/AQADAAcAAADP/+j/AQADAAcAAADQ/+j/AQADAAcAAADR/+j/AQADAAcAAADS/+j/AQADAAcAAAADAOb/AQADAAcAAAA=")
+tile_set = SubResource("TileSet_yeb0u")
+rendering_quadrant_size = 32
+physics_quadrant_size = 32
+
+[node name="slow_powder" type="Area2D" parent="."]
+position = Vector2(-49, -60)
+
+[node name="ColorRect" type="ColorRect" parent="slow_powder"]
+offset_left = -1537.0
+offset_top = -836.0
+offset_right = -1442.0
+offset_bottom = -827.0
+color = Color(0.5867031, 0.99664456, 0.81137854, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="slow_powder"]
+position = Vector2(-1489.5, -831.5)
+shape = SubResource("RectangleShape2D_t785m")
+
+[node name="slow_powder2" type="Area2D" parent="."]
+position = Vector2(128, -70)
+
+[node name="ColorRect" type="ColorRect" parent="slow_powder2"]
+offset_left = -1524.0
+offset_top = -831.0
+offset_right = -1458.0
+offset_bottom = -820.0
+color = Color(0.5867031, 0.99664456, 0.81137854, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="slow_powder2"]
+position = Vector2(-1491.5, -825.5)
+shape = SubResource("RectangleShape2D_i7t2s")
+
+[node name="slow_powder3" type="Area2D" parent="."]
+position = Vector2(287, -70)
+
+[node name="ColorRect" type="ColorRect" parent="slow_powder3"]
+offset_left = -1524.0
+offset_top = -836.0
+offset_right = -1456.0
+offset_bottom = -822.0
+color = Color(0.5867031, 0.99664456, 0.81137854, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="slow_powder3"]
+position = Vector2(-1489, -828.5)
+shape = SubResource("RectangleShape2D_pqfbu")
+
+[node name="slow_powder4" type="Area2D" parent="."]
+position = Vector2(449, -70)
+
+[node name="ColorRect" type="ColorRect" parent="slow_powder4"]
+offset_left = -1524.0
+offset_top = -836.0
+offset_right = -1459.0
+offset_bottom = -823.0
+color = Color(0.5867031, 0.99664456, 0.81137854, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="slow_powder4"]
+position = Vector2(-1491.5, -829.5)
+shape = SubResource("RectangleShape2D_etsvn")
+
+[node name="slow_powder5" type="Area2D" parent="."]
+position = Vector2(606, -65)
+
+[node name="ColorRect" type="ColorRect" parent="slow_powder5"]
+offset_left = -1521.0
+offset_top = -836.0
+offset_right = -1459.0
+offset_bottom = -825.0
+color = Color(0.5867031, 0.99664456, 0.81137854, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="slow_powder5"]
+position = Vector2(-1491, -830.75)
+shape = SubResource("RectangleShape2D_r7uni")
+
+[node name="slow_powder6" type="Area2D" parent="."]
+position = Vector2(768, -70)
+
+[node name="ColorRect" type="ColorRect" parent="slow_powder6"]
+offset_left = -1523.0
+offset_top = -834.0
+offset_right = -1459.0
+offset_bottom = -821.0
+color = Color(0.5867031, 0.99664456, 0.81137854, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="slow_powder6"]
+position = Vector2(-1491, -827)
+shape = SubResource("RectangleShape2D_j2suw")
+
+[node name="slow_powder7" type="Area2D" parent="."]
+position = Vector2(1291, -70)
+
+[node name="ColorRect" type="ColorRect" parent="slow_powder7"]
+offset_left = -1438.0
+offset_top = -834.0
+offset_right = -1374.0
+offset_bottom = -822.0
+color = Color(0.5867031, 0.99664456, 0.81137854, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="slow_powder7"]
+position = Vector2(-1406, -828.5)
+shape = SubResource("RectangleShape2D_oxods")
+
+[node name="slow_powder8" type="Area2D" parent="."]
+position = Vector2(695, -75)
+
+[node name="ColorRect" type="ColorRect" parent="slow_powder8"]
+offset_left = -682.0
+offset_top = -828.0
+offset_right = -617.0
+offset_bottom = -816.0
+color = Color(0.5867031, 0.99664456, 0.81137854, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="slow_powder8"]
+position = Vector2(-650, -822)
+shape = SubResource("RectangleShape2D_0rukg")
+
+[node name="slow_powder9" type="Area2D" parent="."]
+position = Vector2(-35, 343)
+
+[node name="ColorRect" type="ColorRect" parent="slow_powder9"]
+offset_left = 208.0
+offset_top = -1244.0
+offset_right = 274.0
+offset_bottom = -1233.0
+color = Color(0.5867031, 0.99664456, 0.81137854, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="slow_powder9"]
+position = Vector2(240.5, -1238.5)
+shape = SubResource("RectangleShape2D_b2krm")
+
+[node name="slow_powder10" type="Area2D" parent="."]
+position = Vector2(-1951, 1041)
+
+[node name="ColorRect" type="ColorRect" parent="slow_powder10"]
+offset_left = 201.0
+offset_top = -1244.0
+offset_right = 2390.0
+offset_bottom = -1227.0
+color = Color(0.5867031, 0.99664456, 0.81137854, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="slow_powder10"]
+position = Vector2(1290, -1238)
+shape = SubResource("RectangleShape2D_qrwgb")
+
+[node name="Ice_Box" type="Area2D" parent="."]
+position = Vector2(3, -355)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ice_Box"]
+position = Vector2(511, 146)
+shape = SubResource("RectangleShape2D_adv88")
+
+[node name="ColorRect" type="ColorRect" parent="Ice_Box"]
+z_index = -1
+offset_left = 454.0
+offset_top = 126.0
+offset_right = 571.0
+offset_bottom = 167.0
+color = Color(8.1822276e-07, 0.49558145, 0.49627864, 1)
+
+[node name="Ice_Box2" type="Area2D" parent="."]
+position = Vector2(-14, -1061)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ice_Box2"]
+position = Vector2(511, 146)
+shape = SubResource("RectangleShape2D_adv88")
+
+[node name="ColorRect" type="ColorRect" parent="Ice_Box2"]
+z_index = -1
+offset_left = 454.0
+offset_top = 126.0
+offset_right = 571.0
+offset_bottom = 167.0
+color = Color(8.1822276e-07, 0.49558145, 0.49627864, 1)
+
+[connection signal="body_entered" from="slow_powder" to="Player" method="_on_slow_powder_body_entered"]
+[connection signal="body_exited" from="slow_powder" to="Player" method="_on_slow_powder_body_exited"]
+[connection signal="body_entered" from="slow_powder2" to="Player" method="_on_slow_powder_body_entered"]
+[connection signal="body_exited" from="slow_powder2" to="Player" method="_on_slow_powder_body_exited"]
+[connection signal="body_entered" from="slow_powder3" to="Player" method="_on_slow_powder_body_entered"]
+[connection signal="body_exited" from="slow_powder3" to="Player" method="_on_slow_powder_body_exited"]
+[connection signal="body_entered" from="slow_powder4" to="Player" method="_on_slow_powder_body_entered"]
+[connection signal="body_exited" from="slow_powder4" to="Player" method="_on_slow_powder_body_exited"]
+[connection signal="body_entered" from="slow_powder5" to="Player" method="_on_slow_powder_body_entered"]
+[connection signal="body_exited" from="slow_powder5" to="Player" method="_on_slow_powder_body_exited"]
+[connection signal="body_entered" from="slow_powder6" to="Player" method="_on_slow_powder_body_entered"]
+[connection signal="body_exited" from="slow_powder6" to="Player" method="_on_slow_powder_body_exited"]
+[connection signal="body_entered" from="slow_powder7" to="Player" method="_on_slow_powder_body_entered"]
+[connection signal="body_exited" from="slow_powder7" to="Player" method="_on_slow_powder_body_exited"]
+[connection signal="body_entered" from="slow_powder8" to="Player" method="_on_slow_powder_body_entered"]
+[connection signal="body_exited" from="slow_powder8" to="Player" method="_on_slow_powder_body_exited"]
+[connection signal="body_entered" from="slow_powder9" to="Player" method="_on_slow_powder_body_entered"]
+[connection signal="body_exited" from="slow_powder9" to="Player" method="_on_slow_powder_body_exited"]
+[connection signal="body_entered" from="slow_powder10" to="Player" method="_on_slow_powder_body_entered"]
+[connection signal="body_exited" from="slow_powder10" to="Player" method="_on_slow_powder_body_exited"]
+[connection signal="body_entered" from="Ice_Box" to="Player" method="_on_ice_box_body_entered"]
+[connection signal="body_exited" from="Ice_Box" to="Player" method="_on_ice_box_body_exited"]
+[connection signal="body_entered" from="Ice_Box2" to="Player" method="_on_ice_box_body_entered"]
+[connection signal="body_exited" from="Ice_Box2" to="Player" method="_on_ice_box_body_exited"]
